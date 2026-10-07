@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Stock Flow â€” Sistema de Control de Stock y Ventas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo">Simple Stock Flow</div>
+        <div class="nav-links">
+          <a href="#caracteristicas">CaracterÃ­sticas</a>
+          <a href="#arquitectura">Arquitectura</a>
+          <a href="#especificacion">EspecificaciÃ³n</a>
+        </div>
+      </nav>
+
+      <div class="hero-content">
+        <h1>Control de Stock y Ventas con Arquitectura Onion</h1>
+        <p>Una soluciÃ³n robusta, trazable y desarrollada bajo la metodologÃ­a Spec-Driven Development (SDD) para la gestiÃ³n precisa de inventarios en almacenes y puntos de venta.</p>
+        <div class="cta-buttons">
+          <a href="#especificacion" class="btn btn-primary">Ver EspecificaciÃ³n</a>
+          <a href="#caracteristicas" class="btn btn-secondary">Conocer MÃ¡s</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="caracteristicas" class="section">
+    <div class="container">
+      <h2 class="section-title">Las 3 Afirmaciones Fundamentales</h2>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">ðŸ“¦</div>
+          <h3>Stock Consistente</h3>
+          <p>El stock que muestra el catÃ¡logo es exactamente el stock real disponible. NingÃºn producto puede tener existencias negativas gracias a controles en dominio y restricciones CHECK a nivel de motor.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">ðŸ”’</div>
+          <h3>Ventas Inmutables</h3>
+          <p>Toda venta registrada es permanente. El precio y el nombre del producto se congelan en el momento exacto de la transacciÃ³n para garantizar trazabilidad y auditorÃ­a sin alteraciones.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">ðŸ“Š</div>
+          <h3>Reportes Inalterables</h3>
+          <p>El reporte de un perÃ­odo cerrado dirÃ¡ exactamente lo mismo hoy y dentro de diez aÃ±os, consolidando las ventas mediante el motor de base de datos sin depender de variaciones del catÃ¡logo vivo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="arquitectura" class="section bg-light">
+    <div class="container">
+      <h2 class="section-title">DiseÃ±o Basado en Arquitectura Onion</h2>
+      <div class="architecture-grid">
+        <div class="arch-box">
+          <h4>1. Dominio Puro</h4>
+          <p>Entidades y Value Objects puros sin dependencia de frameworks ni librerÃ­as de persistencia externa.</p>
+        </div>
+        <div class="arch-box">
+          <h4>2. AplicaciÃ³n</h4>
+          <p>Casos de uso orquestadores con puertos entrantes y salientes y manejo transaccional Unit of Work.</p>
+        </div>
+        <div class="arch-box">
+          <h4>3. Infraestructura</h4>
+          <p>Persistencia Eloquent ORM con mappers aislados, concurrencia optimista y seguridad JWT.</p>
+        </div>
+        <div class="arch-box">
+          <h4>4. PresentaciÃ³n</h4>
+          <p>Controladores HTTP, validaciÃ³n de forma y serializaciÃ³n de errores bajo el estÃ¡ndar RFC 7807 Problem Details.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Simple Stock Flow â€” Ficha ADSO 3413974. Proyecto acadÃ©mico bajo Spec-Driven Development.</p>
+    </div>
+  </footer>
+</body>
+</html>
