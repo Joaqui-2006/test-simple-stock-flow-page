@@ -1,15 +1,15 @@
 # test-simple-stock-flow-page
 
-> **Prueba tÃ©cnica Â· Ficha ADSO 3413974**  
-> Sitio pÃºblico estÃ¡tico de presentaciÃ³n de Simple Stock Flow.
+> **Prueba técnica · Ficha ADSO 3413974**  
+> Sitio público estático de presentación de Simple Stock Flow.
 
 ---
 
-### 1. QuÃ© es esto
-Es el sitio web estÃ¡tico pÃºblico que presenta la soluciÃ³n *Simple Stock Flow*, sus principios de diseÃ±o y sus afirmaciones de negocio. Por mandato explÃ­cito de la especificaciÃ³n tÃ©cnica, **este sitio no consume ni se comunica con la API**; es totalmente autÃ³nomo y estÃ¡tico.
+### 1. Qué es esto
+Es el sitio web estático público que presenta la solución *Simple Stock Flow*, sus principios de diseño y sus afirmaciones de negocio. Por mandato explícito de la especificación técnica, **este sitio no consume ni se comunica con la API**; es totalmente autónomo y estático.
 
-### 2. CÃ³mo se levanta
-No requiere compilaciÃ³n ni dependencias. Puede abrirse directamente en cualquier navegador o servirse con un servidor estÃ¡tico:
+### 2. Cómo se levanta
+No requiere compilación ni dependencias. Puede abrirse directamente en cualquier navegador o servirse con un servidor estático:
 ```bash
 # Abrir directamente en el navegador
 start index.html
@@ -18,11 +18,11 @@ start index.html
 npx serve .
 ```
 
-### 3. DÃ³nde estÃ¡n los datos
-Este repositorio no contiene bases de datos ni almacena estados dinÃ¡micos. Toda la informaciÃ³n presentada es fija en el cÃ³digo HTML/CSS.
+### 3. Dónde están los datos
+Este repositorio no contiene bases de datos ni almacena estados dinámicos. Toda la información presentada es fija en el código HTML/CSS.
 
-### 4. CÃ³mo se prueba
+### 4. Cómo se prueba
 Basta con abrir `index.html` en un navegador web y verificar que la estructura visual, las secciones y los estilos se renderizan correctamente sin errores de consola.
 
-### 5. QuÃ© falta
-El sitio estÃ¡tico de presentaciÃ³n estÃ¡ 100% completo y listo para despliegue pÃºblico.
+### 5. Qué falta
+El sitio estático de presentación está 100% completo y listo para despliegue público.
