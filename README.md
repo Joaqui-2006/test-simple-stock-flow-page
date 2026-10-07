@@ -1,4 +1,4 @@
-﻿# test-simple-stock-flow-page
+# test-simple-stock-flow-page
 
 > **Prueba tÃ©cnica Â· Ficha ADSO 3413974**  
 > Sitio pÃºblico estÃ¡tico de presentaciÃ³n de Simple Stock Flow.
