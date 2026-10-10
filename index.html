@@ -3,84 +3,341 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple Stock Flow — Sistema de Control de Stock y Ventas</title>
+  <title>Simple Stock Flow — Control de Stock y Ventas con Arquitectura Onion</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="hero">
-    <div class="container">
-      <nav class="navbar">
-        <div class="logo">Simple Stock Flow</div>
-        <div class="nav-links">
-          <a href="#caracteristicas">Características</a>
-          <a href="#arquitectura">Arquitectura</a>
-          <a href="#especificacion">Especificación</a>
-        </div>
+  <!-- Header & Navbar -->
+  <header class="navbar-wrapper">
+    <div class="container navbar">
+      <a href="#" class="brand">
+        <span class="brand-badge">SSF</span>
+        <span>Simple Stock Flow</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#afirmaciones">Afirmaciones</a>
+        <a href="#arquitectura">Arquitectura Onion</a>
+        <a href="#defensa">Triple Barrera</a>
+        <a href="#repositorios">Repositorios</a>
+        <a href="http://localhost:8080" target="_blank" class="btn btn-primary btn-nav">Abrir App (8080)</a>
       </nav>
-
-      <div class="hero-content">
-        <h1>Control de Stock y Ventas con Arquitectura Onion</h1>
-        <p>Una solución robusta, trazable y desarrollada bajo la metodología Spec-Driven Development (SDD) para la gestión precisa de inventarios en almacenes y puntos de venta.</p>
-        <div class="cta-buttons">
-          <a href="#especificacion" class="btn btn-primary">Ver Especificación</a>
-          <a href="#caracteristicas" class="btn btn-secondary">Conocer Más</a>
-        </div>
-      </div>
     </div>
   </header>
 
-  <section id="caracteristicas" class="section">
+  <!-- Hero Section -->
+  <section class="hero">
     <div class="container">
-      <h2 class="section-title">Las 3 Afirmaciones Fundamentales</h2>
-      <div class="cards-grid">
-        <div class="card">
-          <div class="card-icon">&#128230;</div>
-          <h3>Stock Consistente</h3>
-          <p>El stock que muestra el catálogo es exactamente el stock real disponible. Ningún producto puede tener existencias negativas gracias a controles en dominio y restricciones CHECK a nivel de motor.</p>
-        </div>
+      <div class="pill-badge">
+        <span class="pill-dot"></span>
+        <span>Ficha ADSO 3413974 · SENA · Spec-Driven Development (SDD)</span>
+      </div>
 
-        <div class="card">
-          <div class="card-icon">&#128274;</div>
-          <h3>Ventas Inmutables</h3>
-          <p>Toda venta registrada es permanente. El precio y el nombre del producto se congelan en el momento exacto de la transacción para garantizar trazabilidad y auditoría sin alteraciones.</p>
-        </div>
+      <h1>
+        Control de Stock y Ventas con<br>
+        <span class="gradient-text">Arquitectura Onion Pura</span>
+      </h1>
 
-        <div class="card">
-          <div class="card-icon">&#128202;</div>
-          <h3>Reportes Inalterables</h3>
-          <p>El reporte de un período cerrado dirá exactamente lo mismo hoy y dentro de diez años, consolidando las ventas mediante el motor de base de datos sin depender de variaciones del catálogo vivo.</p>
+      <p>
+        Una solución empresarial diseñada para garantizar stock consistente, ventas inmutables y reportes inalterables bajo un estricto aislamiento de capas, concurrencia optimista y auditoría permanente.
+      </p>
+
+      <div class="cta-group">
+        <a href="http://localhost:8080" target="_blank" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+          Probar Aplicación Web
+        </a>
+        <a href="#arquitectura" class="btn btn-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+          Explorar Arquitectura
+        </a>
+        <a href="https://github.com/Joaqui-2006?tab=repositories&q=test-simple-stock-flow" target="_blank" class="btn btn-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          GitHub Repositories
+        </a>
+      </div>
+
+      <!-- Stats Ribbon -->
+      <div class="stats-ribbon">
+        <div class="stat-item">
+          <span class="stat-num">15</span>
+          <span class="stat-label">Endpoints OpenAPI 3.0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">12</span>
+          <span class="stat-label">Reglas de Negocio (RN)</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">4+1</span>
+          <span class="stat-label">Anillos Onion + Root</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">0</span>
+          <span class="stat-label">Violaciones Deptrac</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Inmutabilidad Histórica</span>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="arquitectura" class="section bg-light">
+  <!-- Fundamental Guarantees Section -->
+  <section id="afirmaciones" class="section">
     <div class="container">
-      <h2 class="section-title">Diseño Basado en Arquitectura Onion</h2>
-      <div class="architecture-grid">
-        <div class="arch-box">
-          <h4>1. Dominio Puro</h4>
-          <p>Entidades y Value Objects puros sin dependencia de frameworks ni librerías de persistencia externa.</p>
+      <div class="section-header">
+        <span class="section-tag">Garantías de Diseño</span>
+        <h2 class="section-title">Las 3 Afirmaciones Fundamentales</h2>
+        <p class="section-subtitle">
+          Pilares normativos e inviolables del sistema definidos formalmente en la especificación técnica.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card stock-card">
+          <div class="card-icon-wrapper stock-icon">&#128230;</div>
+          <h3>1. Stock Consistente</h3>
+          <p>
+            El stock que visualiza el catálogo es exactamente el inventario real disponible. Ningún producto puede tener existencias negativas gracias a controles de invariantes en dominio y restricciones CHECK a nivel de motor MySQL.
+          </p>
+          <span class="card-tag">RN-01 · RN-02 · RN-08 · DP-01</span>
         </div>
-        <div class="arch-box">
-          <h4>2. Aplicación</h4>
-          <p>Casos de uso orquestadores con puertos entrantes y salientes y manejo transaccional Unit of Work.</p>
+
+        <div class="feature-card sales-card">
+          <div class="card-icon-wrapper sales-icon">&#128274;</div>
+          <h3>2. Ventas Inmutables</h3>
+          <p>
+            Toda venta confirmada es permanente y no editable. El precio unitario y el nombre del producto se congelan en el momento exacto de la transacción para garantizar una auditoría financiera sin adulteración.
+          </p>
+          <span class="card-tag">RN-03 · RN-04 · RN-05 · DP-02</span>
         </div>
-        <div class="arch-box">
-          <h4>3. Infraestructura</h4>
-          <p>Persistencia Eloquent ORM con mappers aislados, concurrencia optimista y seguridad JWT.</p>
-        </div>
-        <div class="arch-box">
-          <h4>4. Presentación</h4>
-          <p>Controladores HTTP, validación de forma y serialización de errores bajo el estándar RFC 7807 Problem Details.</p>
+
+        <div class="feature-card reports-card">
+          <div class="card-icon-wrapper reports-icon">&#128202;</div>
+          <h3>3. Reportes Inalterables</h3>
+          <p>
+            El balance de ventas de un período cerrado producirá la misma cifra hoy y en diez años. Los reportes se calculan agregando los ítems de venta congelados, sin depender de mutaciones en el catálogo vivo.
+          </p>
+          <span class="card-tag">RN-07 · DP-04 · RFC 7807</span>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Onion Architecture Section -->
+  <section id="arquitectura" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Aislamiento Radical</span>
+        <h2 class="section-title">Arquitectura Onion de 4 Anillos</h2>
+        <p class="section-subtitle">
+          El sentido de las dependencias apunta exclusivamente hacia el centro. El Dominio desconoce frameworks, bases de datos o protocolos de transporte.
+        </p>
+      </div>
+
+      <div class="onion-rings-grid">
+        <div class="ring-card">
+          <div class="ring-number">Anillo 1 · Centro</div>
+          <h4>Dominio Puro</h4>
+          <p>Entidades (Product, Sale, User), Value Objects (Money, Quantity, Role) e invariantes de negocio. Cero librerías externas.</p>
+          <span class="ring-badge">Regla R-01: Sin dependencias</span>
+        </div>
+
+        <div class="ring-card">
+          <div class="ring-number">Anillo 2</div>
+          <h4>Aplicación</h4>
+          <p>Casos de uso (PlaceSaleService, GetStockSummaryService), DTOs y puertos de repositorios (ProductRepositoryPort, UnitOfWorkPort).</p>
+          <span class="ring-badge">Regla R-02: Depende solo de Anillo 1</span>
+        </div>
+
+        <div class="ring-card">
+          <div class="ring-number">Anillo 3</div>
+          <h4>Infraestructura</h4>
+          <p>Adaptadores de persistencia Eloquent ORM, concurrencia optimista (versioning), autenticación JWT y migraciones MySQL.</p>
+          <span class="ring-badge">Regla R-03: Implementa puertos</span>
+        </div>
+
+        <div class="ring-card">
+          <div class="ring-number">Anillo 4 · Exterior</div>
+          <h4>Presentación</h4>
+          <p>Controladores HTTP REST, validación sintáctica de formulario y serialización RFC 7807 Problem Details.</p>
+          <span class="ring-badge">Regla R-05: RFC 7807 uniforme</span>
+        </div>
+      </div>
+
+      <!-- Verification Terminal Preview -->
+      <div class="terminal-box">
+        <div class="terminal-header">
+          <span class="terminal-dot dot-red"></span>
+          <span class="terminal-dot dot-yellow"></span>
+          <span class="terminal-dot dot-green"></span>
+          <span class="terminal-title">test-simple-stock-flow-api &mdash; verify.sh</span>
+        </div>
+        <div class="terminal-body">
+          <p><span class="term-dim">$</span> <span class="term-cmd">bash verify.sh</span></p>
+          <p><span class="term-dim">[1/4]</span> Verificando Regla R-01 (Dominio puro sin dependencias)... <span class="term-success">&#10003; CUMPLE</span></p>
+          <p><span class="term-dim">[2/4]</span> Verificando Regla R-03 (Sin persistencia directa en controladores)... <span class="term-success">&#10003; CUMPLE</span></p>
+          <p><span class="term-dim">[3/4]</span> Ejecutando análisis estático arquitectónico con Deptrac...</p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report: 0 violations, 0 errors. <span class="term-success">&#10003; 100% CUMPLE ONION RULES</span></p>
+          <p><span class="term-dim">[4/4]</span> Ejecutando suite PHPUnit (Dominio, Aplicación, Arquitectura)...</p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="term-success">OK (25 tests, 173 assertions)</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Triple Barrier of Defense -->
+  <section id="defensa" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Integridad Transaccional</span>
+        <h2 class="section-title">La Triple Barrera de Defensa</h2>
+        <p class="section-subtitle">
+          Estrategia de defensa en profundidad para que jamás ocurran sobreventas ni estados inválidos.
+        </p>
+      </div>
+
+      <div class="barrier-grid">
+        <div class="barrier-card">
+          <div class="barrier-header">
+            <span class="barrier-icon">&#128737;&#65039;</span>
+            <h4>Barrera 1: Dominio</h4>
+          </div>
+          <p>
+            Los Value Objects como <code>Quantity</code> y <code>Money</code> validan rangos y previenen valores negativos en memoria antes de cualquier cálculo. El método <code>$product->deductStock($qty)</code> arroja excepción de dominio si el stock es insuficiente.
+          </p>
+        </div>
+
+        <div class="barrier-card">
+          <div class="barrier-header">
+            <span class="barrier-icon">&#9889;</span>
+            <h4>Barrera 2: Aplicación</h4>
+          </div>
+          <p>
+            El caso de uso <code>PlaceSaleService</code> ejecuta toda la operación dentro de una transacción atómica gestionada por el puerto <code>UnitOfWorkPort</code>. Si ocurre un fallo en cualquier línea, se ejecuta un rollback completo sin efectos secundarios.
+          </p>
+        </div>
+
+        <div class="barrier-card">
+          <div class="barrier-header">
+            <span class="barrier-icon">&#128272;</span>
+            <h4>Barrera 3: Base de Datos</h4>
+          </div>
+          <p>
+            El motor MySQL 8.4 impone restricciones <code>CHECK (stock >= 0)</code>, claves foráneas estrictas y control de concurrencia optimista con <code>version</code>, rechazando de raíz cualquier colisión concurrente de inventario.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Repositories Showcase Section -->
+  <section id="repositorios" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Ecosistema Modular</span>
+        <h2 class="section-title">Los 6 Repositorios del Proyecto</h2>
+        <p class="section-subtitle">
+          Separación estricta de responsabilidades en repositorios autónomos en GitHub bajo la organización <code>Joaqui-2006</code>.
+        </p>
+      </div>
+
+      <div class="repos-grid">
+        <a href="https://github.com/Joaqui-2006/test-simple-stock-flow-docs" target="_blank" class="repo-card">
+          <div class="repo-top">
+            <span class="repo-title">test-simple-stock-flow-docs</span>
+            <span class="repo-ext-icon">&#8599;</span>
+          </div>
+          <p class="repo-desc">Documentación viva, Matriz de Trazabilidad y Auditoría formal, especificación OpenAPI 3.0.3 y diagramas C4.</p>
+          <div class="repo-footer">
+            <span class="repo-pill">OpenAPI 3.0</span>
+            <span class="repo-pill">Matriz RN/DP</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/Joaqui-2006/test-simple-stock-flow-api" target="_blank" class="repo-card">
+          <div class="repo-top">
+            <span class="repo-title">test-simple-stock-flow-api</span>
+            <span class="repo-ext-icon">&#8599;</span>
+          </div>
+          <p class="repo-desc">Backend Laravel 11 estructurado en 4 anillos Onion, Deptrac con 0 violaciones, PHPUnit con 25 tests y RFC 7807.</p>
+          <div class="repo-footer">
+            <span class="repo-pill">Laravel 11</span>
+            <span class="repo-pill">Onion Arch</span>
+            <span class="repo-pill">Deptrac</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/Joaqui-2006/test-simple-stock-flow-app" target="_blank" class="repo-card">
+          <div class="repo-top">
+            <span class="repo-title">test-simple-stock-flow-app</span>
+            <span class="repo-ext-icon">&#8599;</span>
+          </div>
+          <p class="repo-desc">Frontend SPA React 18 con TypeScript y Vite, diseño moderno, micro-interacciones, catálogo dinámico y módulo de ventas.</p>
+          <div class="repo-footer">
+            <span class="repo-pill">React 18</span>
+            <span class="repo-pill">TypeScript</span>
+            <span class="repo-pill">Vite</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/Joaqui-2006/test-simple-stock-flow-infra" target="_blank" class="repo-card">
+          <div class="repo-top">
+            <span class="repo-title">test-simple-stock-flow-infra</span>
+            <span class="repo-ext-icon">&#8599;</span>
+          </div>
+          <p class="repo-desc">Orquestación integral en Docker Compose para MySQL 8.4, backend PHP-FPM y frontend Nginx con variables centralizadas.</p>
+          <div class="repo-footer">
+            <span class="repo-pill">Docker Compose</span>
+            <span class="repo-pill">MySQL 8.4</span>
+            <span class="repo-pill">Nginx</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/Joaqui-2006/test-simple-stock-flow-page" target="_blank" class="repo-card">
+          <div class="repo-top">
+            <span class="repo-title">test-simple-stock-flow-page</span>
+            <span class="repo-ext-icon">&#8599;</span>
+          </div>
+          <p class="repo-desc">Sitio estático público de presentación de la solución, sus principios rectores y estado de conformidad.</p>
+          <div class="repo-footer">
+            <span class="repo-pill">HTML5</span>
+            <span class="repo-pill">CSS3 Glassmorphic</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/Joaqui-2006/test-simple-stock-flow-tool" target="_blank" class="repo-card">
+          <div class="repo-top">
+            <span class="repo-title">test-simple-stock-flow-tool</span>
+            <span class="repo-ext-icon">&#8599;</span>
+          </div>
+          <p class="repo-desc">Suite de pruebas de integración, automatización de verificación de endpoints y simulación de concurrencia.</p>
+          <div class="repo-footer">
+            <span class="repo-pill">Node.js</span>
+            <span class="repo-pill">Integración E2E</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2026 Simple Stock Flow — Ficha ADSO 3413974. Proyecto académico bajo Spec-Driven Development.</p>
+      <div class="footer-nav">
+        <a href="#afirmaciones">Afirmaciones</a>
+        <a href="#arquitectura">Arquitectura</a>
+        <a href="#defensa">Triple Barrera</a>
+        <a href="#repositorios">Repositorios</a>
+        <a href="http://localhost:8080" target="_blank">Aplicación</a>
+      </div>
+      <p>&copy; 2026 Simple Stock Flow &mdash; SENA ADSO Ficha 3413974. Proyecto desarrollado bajo la metodología Spec-Driven Development (SDD).</p>
     </div>
   </footer>
 </body>
